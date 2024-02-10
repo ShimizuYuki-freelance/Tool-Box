@@ -2,7 +2,7 @@
 本ファイルは個人的によく使う便利なコードの雛形をまとめたものです。  
 ご自由にお使いください。  
 個人的な勉強のメモの要素も大きいので不具合等が起きても寛大な心でお許しいただけると幸いです。  
-  
+***
 --- English ---  
 This file is a collection of useful code templates that I personally often use.  
 Please feel free to use it.  
