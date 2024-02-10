@@ -1,7 +1,7 @@
 <?php
 //ogpタグ挿入
 function my_meta_ogp() {
-  if (is_front_page() || is_home() || is_singular() || is_archive() || is_category()) {
+  if (is_front_page() || is_home() || is_singular() || is_category()) {
     global $post;
     $ogp_title = '';
     $ogp_description = '';
@@ -33,7 +33,7 @@ function my_meta_ogp() {
       $ps_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');//サムネイルのIDを取得して画像のURLと幅と高さを取得
       $ogp_image = $ps_thumbnail[0];//画像のURLを挿入
     } else {
-      $ogp_image = 'サムネイルがない場合の画像のURL';
+      $ogp_image = '➀:サムネイルがない場合の画像のURL';
     }
     $insert .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
     $insert .= '<meta property="og:description" content="' . esc_attr($ogp_description) . '">' . "\n";
@@ -44,6 +44,10 @@ function my_meta_ogp() {
     $insert .= '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name')) . '">' . "\n";
     $insert .= '<meta name="twitter:card" content="summary_large_image">' . "\n";
     $insert .= '<meta property="twitter:description" content="' . esc_attr($ogp_description) . '">' . "\n";
+    $insert .= '<meta name="twitter:site" content="➁:ツイッターの@ユーザー名">' . "\n";
+    $insert .= '<meta name="twitter:site" content="➂:コンテンツ作成者のツイッターの@ユーザー名">' . "\n";
+    $insert .= '<meta property="fb:app_id" content="➃:Facebook App-ID">' . "\n";
+    $insert .= '<meta property="fb:app_id" content="➄:Facebook adminID">' . "\n";
     echo $insert;
   }
 }
