@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* ---------- .m_hanburger ---------- */
+.m_hamburger {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+/* pc幅では表示させない */
+@media screen and (min-width: 1080px) {
+  .m_hamburger {
+    display: none;
+  }
+}
+
+.m_hamburger-bar {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: #000;
+  left: 50%;
+}
+
+.m_hamburger-bar:first-child {
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.m_hamburger-bar:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.m_hamburger-bar:last-child {
+  top: 100%;
+  transform: translate(-50%, -100%);
+}
+
+.js_hamburger-bar {
+  transition: top 0.24s, transform 0.24s, opacity 0.24s;
+}
+
+.js_hamburger.is-active .m_hamburger-bar:first-child {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.js_hamburger.is-active .m_hamburger-bar:nth-child(2) {
+  transform: translate(50%, -50%);
+  opacity: 0;
+}
+
+.js_hamburger.is-active .m_hamburger-bar:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
