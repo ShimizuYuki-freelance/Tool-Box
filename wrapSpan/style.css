@@ -1,0 +1,14 @@
+.target {
+  text-align: center;
+  margin: 0;
+
+}
+
+span {
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+span.is-active {
+  opacity: 1;
+}
